@@ -207,8 +207,7 @@ We welcome contributions to make Link Saver Pro even better! Here's how you can 
 ### **Development Setup**
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/link-saver-pro.git
-
+git clone https://github.com/meertechnology01/link-saver-pro.git
 # Navigate to the project
 cd link-saver-pro
 
@@ -281,12 +280,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Chrome Web Store](https://chrome.google.com/webstore) - Install the extension
 - [GitHub Repository](https://github.com/your-username/link-saver-pro) - Source code
-- [Issues & Support](https://github.com/your-username/link-saver-pro/issues) - Get help
-- [Releases](https://github.com/your-username/link-saver-pro/releases) - Version history
+- [Issues & Support](https://github.com/meertechnology01/link-saver-pro.git) - Get help
+- [Releases](https://github.com/meertechnology01/link-saver-pro/releases) - Version history
 
 ---
 
-**Made with ❤️ for productivity enthusiasts, researchers, and anyone who loves organized bookmarks!**
+**Made with ❤️ in Nigeria for productivity enthusiasts, researchers, and anyone who loves organized bookmarks!**
 
 ### Tags: 
 `bookmark-manager` `chrome-extension` `url-organizer` `link-saver` `bookmark-organizer` `productivity` `browser-extension` `bookmark-sync` `link-management` `website-saver` `bookmark-tool` `url-manager` `web-clipper` `bookmark-search` `cross-device-sync`
