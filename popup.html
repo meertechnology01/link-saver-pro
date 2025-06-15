@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link Saver Pro - Bookmark Manager Chrome Extension</title>
+  <meta name="description" content="Ultimate bookmark manager Chrome extension to organize URLs, save links, and manage bookmarks with folders, tags, sync, and export features. Simple link saver for productivity.">
+  <meta name="keywords" content="bookmark manager, Chrome extension, link saver, URL organizer, bookmark organizer, save links, website saver, bookmark sync, link management, bookmark extension, URL manager, link organizer, bookmark tool, save websites, link keeper, bookmark keeper, URL saver, web clipper, bookmark folder, link folder, bookmark tags, link tags, bookmark export, link export, bookmark backup, cross device sync, bookmark search, link search, drag drop bookmarks, organize bookmarks, manage bookmarks, productivity tool, browser extension">
+  <meta name="author" content="Link Saver Pro Team">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Link Saver Pro - Ultimate Bookmark Manager Chrome Extension">
+  <meta property="og:description" content="Organize URLs, save links, and manage bookmarks with advanced features like folders, tags, sync, drag-and-drop, and export. The best bookmark manager for Chrome.">
+  <meta property="og:site_name" content="Link Saver Pro">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Link Saver Pro - Bookmark Manager Chrome Extension">
+  <meta name="twitter:description" content="Ultimate bookmark organizer with folders, tags, sync, and export. Simple link saver to organize URLs and manage bookmarks efficiently.">
+  
+  <!-- Chrome Extension Specific Meta Tags -->
+  <meta name="application-name" content="Link Saver Pro">
+  <meta name="msapplication-TileColor" content="#4285f4">
+  <meta name="theme-color" content="#4285f4">
+  
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Link Saver Pro - Bookmark Manager Chrome Extension",
+    "description": "Ultimate bookmark manager Chrome extension to organize URLs, save links, and manage bookmarks with folders, tags, sync, and export features.",
+    "applicationCategory": "BrowserExtension",
+    "operatingSystem": "Chrome Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "keywords": "bookmark manager, Chrome extension, link saver, URL organizer, bookmark organizer, save links, website saver, bookmark sync, link management",
+    "author": {
+      "@type": "Organization",
+      "name": "Link Saver Pro Team"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <h1>🔗 Link Saver Pro</h1>
+    <div class="subtitle">Ultimate Bookmark Manager & URL Organizer</div>
+    <div class="seo-tags">
+      <span class="seo-tag">Bookmark Manager</span>
+      <span class="seo-tag">Chrome Extension</span>
+      <span class="seo-tag">Link Organizer</span>
+    </div>
+  </header>
+  
+  <main class="content" role="main">
+    <!-- Quick Actions -->
+    <section class="quick-actions" aria-label="Quick bookmark actions">
+      <button id="saveCurrentTab" class="quick-btn" title="Save current tab to bookmarks" aria-label="Save current website to bookmarks">
+        💾 Save Current Tab
+      </button>
+      <button id="exportBtn" class="quick-btn" title="Export saved bookmarks" aria-label="Export bookmark collection">
+        📤 Export Bookmarks
+      </button>
+    </section>
+
+    <!-- Folder Management -->
+    <section class="folder-section" aria-label="Bookmark folder management">
+      <div class="folder-header">
+        <select id="folderSelect" aria-label="Select bookmark folder to organize URLs">
+          <option value="default">📁 All Bookmarks</option>
+        </select>
+        <button id="newFolderBtn" title="Create new bookmark folder" aria-label="Create new folder to organize links">➕</button>
+      </div>
+    </section>
+
+    <!-- Input Section -->
+    <section class="input-section" aria-label="Add new bookmark or link">
+      <div class="input-group">
+        <input 
+          type="url" 
+          id="linkInput" 
+          placeholder="Paste URL here to save bookmark..."
+          aria-label="URL input for saving bookmarks and links"
+          title="Enter website URL to save as bookmark"
+        >
+        <input 
+          type="text" 
+          id="tagInput" 
+          placeholder="Tags (e.g., work, tools, resources)"
+          aria-label="Tags input for organizing bookmarks"
+          title="Add comma-separated tags to organize your bookmarks"
+        >
+      </div>
+      <button id="addBtn" aria-label="Add bookmark to collection" title="Save URL as bookmark with tags">
+        <span>➕</span>
+        Save Bookmark
+      </button>
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="search-section" aria-label="Search and filter bookmarks">
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="🔍 Search bookmarks, URLs, and tags..."
+        aria-label="Search through saved bookmarks and links"
+        title="Search your bookmark collection by URL, title, or tags"
+      >
+      <div class="filter-tags" id="filterTags" aria-label="Filter bookmarks by tags"></div>
+    </section>
+
+    <!-- Links Section -->
+    <section class="links-section" aria-label="Bookmark collection and management">
+      <div class="links-header">
+        <span>Saved Bookmarks & Links</span>
+        <div class="header-controls">
+          <button id="sortBtn" class="sort-btn" title="Toggle bookmark sort order" aria-label="Change bookmark sorting order">
+            📅 Oldest First
+          </button>
+          <span class="links-count" id="linksCount" aria-label="Total number of saved bookmarks">0</span>
+        </div>
+      </div>
+      <ul id="linkList" role="list" class="sortable-list" aria-label="List of saved bookmarks and links"></ul>
+    </section>
+  </main>
+
+  <!-- Export Modal -->
+  <div id="exportModal" class="modal" style="display: none;" role="dialog" aria-labelledby="exportModalTitle" aria-describedby="exportModalDesc">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="exportModalTitle">Export Bookmark Collection</h3>
+        <button id="closeModal" class="close-btn" aria-label="Close export dialog">✕</button>
+      </div>
+      <div class="modal-body">
+        <p id="exportModalDesc">Choose format to export your bookmark collection:</p>
+        <div class="export-options">
+          <button id="exportJson" class="export-btn" aria-label="Export bookmarks as JSON file">📄 JSON Format</button>
+          <button id="exportCsv" class="export-btn" aria-label="Export bookmarks as CSV spreadsheet">📊 CSV Spreadsheet</button>
+          <button id="exportHtml" class="export-btn" aria-label="Export bookmarks as HTML webpage">🌐 HTML Webpage</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Folder Modal -->
+  <div id="folderModal" class="modal" style="display: none;" role="dialog" aria-labelledby="folderModalTitle" aria-describedby="folderModalDesc">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="folderModalTitle">Create Bookmark Folder</h3>
+        <button id="closeFolderModal" class="close-btn" aria-label="Close folder creation dialog">✕</button>
+      </div>
+      <div class="modal-body">
+        <p id="folderModalDesc">Create a new folder to organize your bookmarks:</p>
+        <input type="text" id="folderNameInput" placeholder="Folder name (e.g., Work, Personal, Resources)" maxlength="50" aria-label="Enter bookmark folder name">
+        <div class="modal-actions">
+          <button id="createFolderBtn" class="primary-btn" aria-label="Create new bookmark folder">Create Folder</button>
+          <button id="cancelFolderBtn" class="secondary-btn" aria-label="Cancel folder creation">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

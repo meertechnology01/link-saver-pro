@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Link Saver Pro - Bookmark Manager & URL Organizer",
+  "short_name": "Link Saver Pro",  "version": "2.0",
+  "description": "Ultimate bookmark manager Chrome extension with folders, tags, sync, drag-and-drop reordering, and export. Simple link saver to organize URLs, save websites, and manage bookmarks efficiently across devices.",
+  "permissions": ["storage", "activeTab", "tabs"],"action": {
+    "default_popup": "popup.html",
+    "default_title": "Link Saver Pro - Bookmark Manager Chrome Extension to Organize URLs and Save Links"
+  },
+  "author": "Link Saver Pro Team",
+  "homepage_url": "https://github.com/your-username/link-saver-pro",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

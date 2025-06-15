@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Generator for Link Saver Pro</title>
+    <style>
+        .icon-preview {
+            margin: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+        .icon {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        .icon-16 { width: 16px; height: 16px; font-size: 8px; }
+        .icon-48 { width: 48px; height: 48px; font-size: 24px; }
+        .icon-128 { width: 128px; height: 128px; font-size: 64px; }
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        button { 
+            background: #4CAF50; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>Link Saver Pro - Icon Generator</h1>
+    <p>This tool will generate the required icons for your Chrome extension.</p>
+    
+    <div class="icon-preview">
+        <div class="icon icon-16">🔗</div>
+        <p>16x16</p>
+        <canvas id="canvas16" width="16" height="16"></canvas>
+        <br><button onclick="downloadIcon(16)">Download icon16.png</button>
+    </div>
+    
+    <div class="icon-preview">
+        <div class="icon icon-48">🔗</div>
+        <p>48x48</p>
+        <canvas id="canvas48" width="48" height="48"></canvas>
+        <br><button onclick="downloadIcon(48)">Download icon48.png</button>
+    </div>
+    
+    <div class="icon-preview">
+        <div class="icon icon-128">🔗</div>
+        <p>128x128</p>
+        <canvas id="canvas128" width="128" height="128"></canvas>
+        <br><button onclick="downloadIcon(128)">Download icon128.png</button>
+    </div>
+    
+    <div style="margin: 20px;">
+        <button onclick="downloadAllIcons()">Download All Icons</button>
+    </div>
+
+    <script>
+        function createIcon(size) {
+            const canvas = document.getElementById(`canvas${size}`);
+            const ctx = canvas.getContext('2d');
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            
+            // Fill background
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+            
+            // Add border radius effect
+            ctx.globalCompositeOperation = 'destination-in';
+            ctx.beginPath();
+            ctx.roundRect(0, 0, size, size, size * 0.1);
+            ctx.fill();
+            ctx.globalCompositeOperation = 'source-over';
+            
+            // Add link symbol
+            ctx.fillStyle = 'white';
+            ctx.font = `bold ${size * 0.5}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🔗', size/2, size/2);
+        }
+        
+        function downloadIcon(size) {
+            createIcon(size);
+            const canvas = document.getElementById(`canvas${size}`);
+            const link = document.createElement('a');
+            link.download = `icon${size}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        function downloadAllIcons() {
+            [16, 48, 128].forEach(size => {
+                setTimeout(() => downloadIcon(size), size * 10);
+            });
+        }
+        
+        // Generate previews on load
+        window.onload = function() {
+            [16, 48, 128].forEach(createIcon);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+{
+  "name": "link-saver-pro-bookmark-manager",
+  "version": "2.0.0",
+  "description": "Ultimate bookmark manager Chrome extension to organize URLs, save links, and manage bookmarks with folders, tags, sync, drag-and-drop, and export features. Simple link saver for productivity.",
+  "main": "popup.js",
+  "scripts": {
+    "build": "echo 'Building Link Saver Pro Chrome Extension...'",
+    "test": "echo 'Testing bookmark manager functionality...'",
+    "lint": "echo 'Linting Chrome extension code...'",
+    "package": "echo 'Packaging bookmark manager for Chrome Web Store...'"
+  },
+  "keywords": [
+    "bookmark-manager",
+    "chrome-extension",
+    "link-saver",
+    "url-organizer", 
+    "bookmark-organizer",
+    "save-links",
+    "website-saver",
+    "bookmark-sync",
+    "link-management",
+    "bookmark-extension",
+    "url-manager",
+    "link-organizer",
+    "bookmark-tool",
+    "save-websites",
+    "link-keeper",
+    "bookmark-keeper",
+    "url-saver",
+    "web-clipper",
+    "bookmark-folder",
+    "link-folder",
+    "bookmark-tags",
+    "link-tags",
+    "bookmark-export",
+    "link-export",
+    "bookmark-backup",
+    "cross-device-sync",
+    "bookmark-search",
+    "link-search",
+    "drag-drop-bookmarks",
+    "organize-bookmarks",
+    "manage-bookmarks",
+    "productivity-tool",
+    "browser-extension",
+    "bookmark-collection",
+    "url-collection",
+    "link-collection",
+    "bookmark-organiser",
+    "bookmark-manager-chrome",
+    "chrome-bookmark-extension",
+    "simple-bookmark-manager",
+    "advanced-bookmark-tool",
+    "bookmark-productivity",
+    "link-productivity",
+    "bookmark-organization",
+    "link-organization",
+    "bookmark-categorization",
+    "link-categorization"
+  ],
+  "author": {
+    "name": "Link Saver Pro Team",
+    "email": "support@linksaverpro.com",
+    "url": "https://github.com/your-username/link-saver-pro"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/link-saver-pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/link-saver-pro/issues",
+    "email": "bugs@linksaverpro.com"
+  },
+  "homepage": "https://github.com/your-username/link-saver-pro#readme",
+  "engines": {
+    "chrome": ">=88.0.0"
+  },
+  "categories": [
+    "Productivity",
+    "Tools",
+    "Browser Extensions",
+    "Bookmark Management",
+    "URL Organization",
+    "Link Management",
+    "Web Tools"
+  ],
+  "chrome_extension": {
+    "manifest_version": 3,
+    "category": "productivity",
+    "target_audience": [
+      "Professionals",
+      "Students", 
+      "Researchers",
+      "Content Creators",
+      "Developers",
+      "General Users"
+    ],
+    "features": [
+      "Bookmark Management",
+      "URL Organization", 
+      "Link Saving",
+      "Folder Organization",
+      "Tag System",
+      "Cross-Device Sync",
+      "Drag and Drop",
+      "Export Functionality",
+      "Search and Filter",
+      "Favicon Support",
+      "Auto-Save Current Tab",
+      "Duplicate Detection",
+      "Multiple Export Formats"
+    ],
+    "use_cases": [
+      "Research Management",
+      "Resource Collection",
+      "Study Materials Organization",
+      "Content Creation",
+      "Professional Development",
+      "Personal Bookmark Management",
+      "Team Collaboration",
+      "Project Organization"
+    ]
+  },
+  "seo": {
+    "primary_keywords": [
+      "bookmark manager Chrome extension",
+      "simple link saver",
+      "Chrome extension to organize URLs",
+      "bookmark organizer",
+      "URL manager",
+      "website saver",
+      "link management tool"
+    ],
+    "secondary_keywords": [
+      "best bookmark manager for Chrome",
+      "Chrome extension to save bookmarks",
+      "simple URL organizer with folders",
+      "cross-device bookmark sync",
+      "drag and drop bookmark manager",
+      "export bookmarks Chrome extension",
+      "professional bookmark organization"
+    ],
+    "long_tail_keywords": [
+      "ultimate bookmark manager Chrome extension with folders and tags",
+      "simple link saver Chrome extension for productivity",
+      "best Chrome extension to organize URLs and save websites",
+      "professional bookmark organizer with sync and export features",
+      "advanced URL manager with drag and drop reordering",
+      "cross-device bookmark sync Chrome extension for teams",
+      "bookmark management tool with search and filter capabilities"
+    ]
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "files": [
+    "manifest.json",
+    "popup.html",
+    "popup.js", 
+    "styles.css",
+    "README.md",
+    "LICENSE",
+    "icon16.png",
+    "icon48.png",
+    "icon128.png"
+  ]
+}
